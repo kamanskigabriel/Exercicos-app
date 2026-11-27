@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensores do aparelho</title>
+</head>
+<body>
+  <h1>Galaxy A55</h1>
+  <button id="btn-listar">Listar sensores</button>
+  <ul id="lista-sensores"></ul>
+
+  <script>
+    const aparelho = {
+      modelo: 'Galaxy A55',
+      so: 'Android',
+      preco: 2299,
+      sensores: ['acelerômetro', 'giroscópio', 'NFC', 'impressão digital'],
+    };
+
+    const botao = document.getElementById('btn-listar');
+    const lista = document.getElementById('lista-sensores');
+
+    botao.addEventListener('click', () => {
+      lista.innerHTML = '';
+      aparelho.sensores.forEach((sensor) => {
+        const li = document.createElement('li');
+        li.textContent = sensor;
+        lista.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
